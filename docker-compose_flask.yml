@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  app:
+    build: ./flask_project
+    links:
+      - db
+    ports:
+      - "9000:9000"
+  db:
+    image: mysql:8.0
+    ports:
+      - "3400:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "khan..8090"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+

@@ -1,0 +1,6 @@
+Flask==3.0.2
+Flask-MySQL==1.5.2
+Flask-MySQLdb
+jira==3.6.0
+mysqlclient
+mysql-connector
