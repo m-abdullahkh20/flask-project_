@@ -8,11 +8,11 @@ app = Flask(__name__, template_folder='templates')
 
 app.config['MYSQL_HOST'] = "db"
 app.config['MYSQL_USER'] = "mysql_user"
-app.config['MYSQL_PASSWORD'] = "Khan..8090"
+app.config['MYSQL_PASSWORD'] = "######"
 app.config['MYSQL_DB'] = "alnafi"
 
 mysql = MySQL(app)
-app.secret_key='abdullahkhanhr@8090'
+app.secret_key='########'
 
 @app.route("/")
 def sample():
@@ -63,7 +63,7 @@ def jira_create():
         Summary = request.form.get('summary')
         Description = request.form.get('desc')
         user = "abdullahkhanhr01@gmail.com"
-        apikey = "ATATT3xFfGF0477IOBcK6l0mzL3WL9XgR_-_iiTFtM_qWQILknPE5Xqj5e0vuP5Axwzlwa2a2RRwgGCZGqsYX6ay03CrsG20Idfd2sq1VZUVp13WXbRiEuusup8E0RbPieEuZIDTowV1eGilHLvvXd8k-BRag2dDcUWpqMIAbyW8q27NEUCJkt0=E6F04F74"
+        apikey = "##############"
         server = "https://haservice.atlassian.net/"
         jira = JIRA(server, basic_auth=(user, apikey))
         jira.create_issue(project=Project,issuetype=Issuetype,summary=Summary,description=Description,reporter={'accountId':Reporter})
