@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            width: 10%;
+            text-align: center;
+        }
+
+        th:first-child {
+            width: 10%;
+        }
+
+        th[colspan="5"] {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table id="testtable" border="2">
+            <tr>
+                <th colspan="5">Trainer details</th>
+            </tr>
+            <tr>
+                <th>S_NO</th>
+                <th>F_Name</th>
+                <th>L_Name</th>
+                <th>Designation</th>
+                <th>Password</th>
+            </tr>
+            {% for i in output_data %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+
+</html>

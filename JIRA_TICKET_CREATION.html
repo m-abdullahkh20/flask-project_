@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Alnafi Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        #main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .form_settings {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form_settings h1 {
+            font-family: Georgia, Garamond, serif;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .form_settings p {
+            margin-bottom: 15px;
+        }
+
+        .form_settings p span {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .form_settings input[type="text"],
+        .form_settings select,
+        .form_settings textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form_settings textarea {
+            height: 150px;
+        }
+
+        .form_settings input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form_settings input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        #footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 5px 5px;
+        }
+
+        #footer p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <h1>Jira Ticket Creation</h1>
+        </div>
+        <nav>
+            <!-- Your existing navigation menu -->
+        </nav>
+        <div id="content_header"></div>
+        <div id="site_content">
+            <div class="form_settings">
+                <h1>Jira Ticket Creation</h1>
+                <form id="trainerForm" method="post" action="{{ url_for('jira_create') }}">
+                    <p>
+                        <span>Project</span>
+                        <select name="project" id="project" required>
+                            <option value="IIP">it industry project (IIP)</option>
+                            <option value="PYT">pythonproject (PYT)</option>
+                        </select>
+                    </p>
+                    <p>
+                        <span>Issue type</span>
+                        <select name="issuetype" id="issuetype" required>
+                            <option value="Task">Task</option>
+                            <option value="Story">Story</option>
+                        </select>
+                    </p>
+                    <p>
+                        <span>Reporter name</span>
+                        <select name="reporter" id="reporter" required>
+                            <option value=" 712020:f5b2c91f-d3fa-40d7-bf63-7858bbcc6b1f">Abdullah khan</option>
+                            <option value="712020:09902e39-f213-4d96-b90f-fc0b02fd115c">Muhammad Abdullah Khan Dilzak</option>
+                        </select>
+                    </p>
+                    <p><span>Summary</span>
+                        <input type="text" name="summary" required placeholder="Enter your summary">
+                    </p>
+                    <p>
+                        <span>Description</span>
+                        <textarea name="desc" required placeholder="Enter your description"></textarea>
+                    </p>
+
+                    <p style="padding-top: 15px">
+                        <span>&nbsp;</span>
+                        <input class="submit" type="submit" name="submit" value="Create Ticket">
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div id="content_footer"></div>
+        <div id="footer">
+            <!-- Your existing footer content -->
+        </div>
+    </div>
+</body>
+
+</html>
